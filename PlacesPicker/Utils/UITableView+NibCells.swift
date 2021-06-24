@@ -8,11 +8,11 @@
 import UIKit
 
 extension UITableView {
-    func registerNibCell<T: NibTableViewCellBase>(_ type: T) {
+    func registerNibCell<T: NibTableViewCellBase>(_ type: T.Type) {
         register(T.nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
 
-    func dequeueNibCell<T: NibTableViewCellBase>(_ type: T) -> T? {
+    func dequeueNibCell<T: NibTableViewCellBase>(_ type: T.Type) -> T? {
         return dequeueReusableCell(withIdentifier: T.reuseIdentifier) as? T
     }
 }

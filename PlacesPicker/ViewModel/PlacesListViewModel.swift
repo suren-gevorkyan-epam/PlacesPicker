@@ -29,11 +29,10 @@ class PlacesListViewModel: NSObject {
     }
 
     func configureTableView(_ tableView: UITableView) {
-//        tableView.registerNibCell(PlaceTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.register(PlaceTableViewCell.nib, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
+        tableView.registerNibCell(PlaceTableViewCell.self)
     }
 
     func fetchData() {
@@ -57,9 +56,7 @@ extension PlacesListViewModel: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueNibCell(PlaceTableViewCell.self) { }
-
-        if let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier) as? PlaceTableViewCell {
+        if let cell = tableView.dequeueNibCell(PlaceTableViewCell.self) {
             let place = content[indexPath.row]
             let vm = PlaceTableViewCellViewModel(title: place.name, iconName: place.imageName)
             cell.setup(withViewModel: vm)
