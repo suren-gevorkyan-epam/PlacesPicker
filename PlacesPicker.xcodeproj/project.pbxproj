@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4E61662685CAC40060B3EF /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E61652685CAC40060B3EF /* Quick */; };
+		CE4E61692685CAE00060B3EF /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E61682685CAE00060B3EF /* Nimble */; };
 		CE77F86B2683567200EEF315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F86A2683567200EEF315 /* AppDelegate.swift */; };
 		CE77F86D2683567200EEF315 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F86C2683567200EEF315 /* SceneDelegate.swift */; };
 		CE77F86F2683567200EEF315 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F86E2683567200EEF315 /* PlacesListViewController.swift */; };
@@ -24,6 +26,16 @@
 		CE77F89526835A9500EEF315 /* NibTableViewCellBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89426835A9500EEF315 /* NibTableViewCellBase.swift */; };
 		CE77F89726835DDE00EEF315 /* PlaceTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89626835DDE00EEF315 /* PlaceTableViewCellViewModel.swift */; };
 		CE77F89F26835FFB00EEF315 /* PlacesPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89E26835FFB00EEF315 /* PlacesPickerTests.swift */; };
+		CEE7FF4B2689A3F200B13997 /* UITableView+NibCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89226835A7F00EEF315 /* UITableView+NibCells.swift */; };
+		CEE7FF4C2689A3F400B13997 /* NibTableViewCellBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89426835A9500EEF315 /* NibTableViewCellBase.swift */; };
+		CEE7FF4D2689A3FA00B13997 /* NetworkPlacesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F8892683579600EEF315 /* NetworkPlacesLoader.swift */; };
+		CEE7FF4E2689A3FA00B13997 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F8852683570F00EEF315 /* Place.swift */; };
+		CEE7FF4F2689A3FA00B13997 /* PlacesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F8872683574F00EEF315 /* PlacesLoader.swift */; };
+		CEE7FF502689A40300B13997 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F88B268358D600EEF315 /* PlaceTableViewCell.swift */; };
+		CEE7FF512689A41500B13997 /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F88F268359A500EEF315 /* PlacesListViewModel.swift */; };
+		CEE7FF522689A41500B13997 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE77F88D268358EB00EEF315 /* PlaceTableViewCell.xib */; };
+		CEE7FF532689A41500B13997 /* PlaceTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77F89626835DDE00EEF315 /* PlaceTableViewCellViewModel.swift */; };
+		CEE7FF542689A54500B13997 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = CE77F87F268356C900EEF315 /* landmarkData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E61692685CAE00060B3EF /* Nimble in Frameworks */,
+				CE4E61662685CAC40060B3EF /* Quick in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +199,8 @@
 			dependencies = (
 			);
 			name = PlacesPicker;
+			packageProductDependencies = (
+			);
 			productName = PlacesPicker;
 			productReference = CE77F8672683567200EEF315 /* PlacesPicker.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +219,10 @@
 				CE77F8A226835FFB00EEF315 /* PBXTargetDependency */,
 			);
 			name = PlacesPickerTests;
+			packageProductDependencies = (
+				CE4E61652685CAC40060B3EF /* Quick */,
+				CE4E61682685CAE00060B3EF /* Nimble */,
+			);
 			productName = PlacesPickerTests;
 			productReference = CE77F89C26835FFB00EEF315 /* PlacesPickerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -234,6 +254,10 @@
 				Base,
 			);
 			mainGroup = CE77F85E2683567200EEF315;
+			packageReferences = (
+				CE4E61642685CAC40060B3EF /* XCRemoteSwiftPackageReference "Quick" */,
+				CE4E61672685CAE00060B3EF /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = CE77F8682683567200EEF315 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE7FF522689A41500B13997 /* PlaceTableViewCell.xib in Resources */,
+				CEE7FF542689A54500B13997 /* landmarkData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +315,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE7FF532689A41500B13997 /* PlaceTableViewCellViewModel.swift in Sources */,
+				CEE7FF4F2689A3FA00B13997 /* PlacesLoader.swift in Sources */,
 				CE77F89F26835FFB00EEF315 /* PlacesPickerTests.swift in Sources */,
+				CEE7FF4D2689A3FA00B13997 /* NetworkPlacesLoader.swift in Sources */,
+				CEE7FF502689A40300B13997 /* PlaceTableViewCell.swift in Sources */,
+				CEE7FF512689A41500B13997 /* PlacesListViewModel.swift in Sources */,
+				CEE7FF4B2689A3F200B13997 /* UITableView+NibCells.swift in Sources */,
+				CEE7FF4C2689A3F400B13997 /* NibTableViewCellBase.swift in Sources */,
+				CEE7FF4E2689A3FA00B13997 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +582,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE4E61642685CAC40060B3EF /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		CE4E61672685CAE00060B3EF /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE4E61652685CAC40060B3EF /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4E61642685CAC40060B3EF /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		CE4E61682685CAE00060B3EF /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4E61672685CAE00060B3EF /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE77F85F2683567200EEF315 /* Project object */;
 }
